@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import TesseractOCR
+import TesseractOCR
 
 class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
