@@ -9,7 +9,9 @@
 import UIKit
 import TesseractOCR
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate , G8TesseractDelegate{
+
     
     @IBOutlet weak var rateOutput: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -39,14 +41,15 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         self.present(actionSheet, animated: true,completion: nil)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
         picker.dismiss(animated: true, completion: nil)
+        recognizeImage(requiredImage:image)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -65,14 +68,31 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // construct here
     }
 
+    func recognizeImage(requiredImage:UIImage){
+        var tesseract:G8Tesseract = G8Tesseract(language: "eng") 
+        tesseract.delegate = self
+        //tesseract.charWhitelist = "01234567890"
+        tesseract.image = requiredImage
+        tesseract.recognize()
+        print("\nText = ", tesseract.recognizedText)
+        displayOutput(textDisplay: tesseract.recognizedText)
+    }
+    
+    func displayOutput(textDisplay:String){
+        rateOutput.text = textDisplay
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func shouldCancelImageRecognitionForTesseract(tesseract: G8Tesseract!) -> Bool {
+        return false // return true if you need to interrupt tesseract before it finishes
+    }
 
 }
 
