@@ -13,7 +13,7 @@ class Authentication : UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    @IBAction func login(_ sender: UIButton, forEvent event: UIEvent) {
+    @IBAction func login() {
         print("check")
         //print(userName, password)
     }

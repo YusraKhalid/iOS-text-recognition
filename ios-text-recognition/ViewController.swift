@@ -56,8 +56,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     }
     
-    @IBAction func pushImage(_ sender: UIButton) {
-    }
+    //@IBAction func pushImage(_ sender: UIButton) {
+    //}
     
     @IBAction func pushImageAndData(_ sender: UIButton) {
     }

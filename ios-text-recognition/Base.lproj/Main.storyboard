@@ -36,19 +36,6 @@
                                     <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s0I-T7-FpA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3N-Yu-d4w">
-                                <rect key="frame" x="204" y="436" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="Push Image">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qnM-38-Fqb"/>
-                                    <segue destination="k26-J1-tEx" kind="show" id="kdd-fo-tlb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ9-kW-WK4">
                                 <rect key="frame" x="18" y="525" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -85,6 +72,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXF-Un-uYz">
+                                <rect key="frame" x="204" y="436" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Push Image">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7I-GK-lsX"/>
+                                    <segue destination="k26-J1-tEx" kind="show" id="Djd-Zu-fjx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -104,8 +104,8 @@
         <!--Authentication-->
         <scene sceneID="ikf-c9-qBg">
             <objects>
-                <viewController title="Authentication" id="k26-J1-tEx" customClass="Authentication" customModule="ios_text_recognition" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Ew-Jx-tU4" userLabel="Authentication" customClass="Aunthentication">
+                <viewController title="Authentication" id="k26-J1-tEx" customClass="Authentication" customModule="ios_text_recognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ew-Jx-tU4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -132,9 +132,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="password:" destination="8yd-yf-uv5" eventType="editingDidEnd" id="4Kk-Ei-ba4"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="user" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-nJ-YwL">
                                 <rect key="frame" x="124" y="358" width="164" height="30"/>
@@ -154,8 +151,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="8yd-yf-uv5" eventType="touchUpInside" id="1v3-se-GW8"/>
-                                    <action selector="login:forEvent:" destination="8yd-yf-uv5" eventType="touchUpInside" id="vS2-94-h1R"/>
+                                    <action selector="login" destination="k26-J1-tEx" eventType="touchUpInside" id="PEu-LD-qqK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,10 +178,6 @@
                             <constraint firstItem="VRA-Uk-0EY" firstAttribute="centerX" secondItem="4Ew-Jx-tU4" secondAttribute="centerX" id="zGk-pk-dGG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BkB-iI-2NI"/>
-                        <connections>
-                            <outlet property="password" destination="aX2-Pd-p0N" id="MZC-uz-w1q"/>
-                            <outlet property="userName" destination="ROn-nJ-YwL" id="QOC-Yd-4Ts"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="TCB-ls-zWA"/>
                 </viewController>
