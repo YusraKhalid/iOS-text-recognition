@@ -6,10 +6,19 @@
 //  Copyright © 2018 Yusra Khalid. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Authentication{
+class Authentication : UIViewController {
     
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
     
-    
+    @IBAction func login(_ sender: UIButton, forEvent event: UIEvent) {
+        print("check")
+        //print(userName, password)
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // construct here
+    }
 }

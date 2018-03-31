@@ -12,7 +12,6 @@ import TesseractOCR
 
 class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate , G8TesseractDelegate{
 
-    
     @IBOutlet weak var rateOutput: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
