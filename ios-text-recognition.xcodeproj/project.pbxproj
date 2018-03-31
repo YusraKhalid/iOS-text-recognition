@@ -10,6 +10,7 @@
 		25DA5FE43B2DE2D7B09615A9 /* Pods_ios_text_recognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031A4B1102199E1A83D5C181 /* Pods_ios_text_recognition.framework */; };
 		5C19ADD4737DF97A4C836E09 /* Pods_ios_text_recognitionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601521320DFE3F006A557D2 /* Pods_ios_text_recognitionUITests.framework */; };
 		8947CAC6205BDC9A0055E999 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947CAC5205BDC9A0055E999 /* CameraHandler.swift */; };
+		89543F43206FB8070046AFAA /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89543F42206FB8070046AFAA /* Authentication.swift */; };
 		89B9E075205DB918002D68B3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B9E074205DB918002D68B3 /* libz.tbd */; };
 		89B9E078205DBA1C002D68B3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 89B9E077205DBA1B002D68B3 /* tessdata */; };
 		89E62C9F20505D5800873747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E62C9E20505D5800873747 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		7B91141F82DA8815C81EAD9A /* Pods-ios-text-recognitionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-text-recognitionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-text-recognitionTests/Pods-ios-text-recognitionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8568717B8766292B044B5BA0 /* Pods-ios-text-recognitionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-text-recognitionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-text-recognitionTests/Pods-ios-text-recognitionTests.release.xcconfig"; sourceTree = "<group>"; };
 		8947CAC5205BDC9A0055E999 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		89543F42206FB8070046AFAA /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		89B9E074205DB918002D68B3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		89B9E077205DBA1B002D68B3 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		89E62C9B20505D5800873747 /* ios-text-recognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-text-recognition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 			children = (
 				89B9E077205DBA1B002D68B3 /* tessdata */,
 				89E62C9E20505D5800873747 /* AppDelegate.swift */,
+				89543F42206FB8070046AFAA /* Authentication.swift */,
 				8947CAC5205BDC9A0055E999 /* CameraHandler.swift */,
 				89E62CA020505D5800873747 /* ViewController.swift */,
 				89E62CA220505D5800873747 /* Main.storyboard */,
@@ -472,6 +475,7 @@
 				8947CAC6205BDC9A0055E999 /* CameraHandler.swift in Sources */,
 				89E62CA120505D5800873747 /* ViewController.swift in Sources */,
 				89E62C9F20505D5800873747 /* AppDelegate.swift in Sources */,
+				89543F43206FB8070046AFAA /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
