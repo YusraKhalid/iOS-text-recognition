@@ -15,7 +15,15 @@ class Authentication : UIViewController {
     
     @IBAction func login() {
         print("check")
-        //print(userName, password)
+        guard let username = userName.text else {
+            return
+        }
+        guard let password = password.text else {
+            return
+        }
+   
+            print(username, password)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

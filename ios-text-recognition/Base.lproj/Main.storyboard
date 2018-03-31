@@ -180,6 +180,10 @@
                         <viewLayoutGuide key="safeArea" id="BkB-iI-2NI"/>
                     </view>
                     <navigationItem key="navigationItem" id="TCB-ls-zWA"/>
+                    <connections>
+                        <outlet property="password" destination="aX2-Pd-p0N" id="t3a-Zf-bJZ"/>
+                        <outlet property="userName" destination="ROn-nJ-YwL" id="yQE-3m-dLb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1s-BZ-EQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8yd-yf-uv5" userLabel="Exit" sceneMemberID="exit"/>
