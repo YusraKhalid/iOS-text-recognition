@@ -12,12 +12,28 @@ import TesseractOCR
 
 class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate , G8TesseractDelegate{
 
-    @IBOutlet weak var rateOutput: UILabel!
+//    @IBOutlet weak var rateOutput: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var rateOutput: UITextField!
+    @IBOutlet weak var fuel: UISegmentedControl!
+    
+    func fuelType() -> String{
+        switch fuel.selectedSegmentIndex
+        {
+        case 0:
+            return "Diesel"
+        case 1:
+            return "Petrol"
+        default:
+            break
+        }
+        return ""
+    }
     
     @IBAction func captureImage(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
+        
         
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
@@ -56,14 +72,19 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     }
     
-    //@IBAction func pushImage(_ sender: UIButton) {
-    //}
-    
-    @IBAction func pushImageAndData(_ sender: UIButton) {
+    @IBAction func pushImage(_ sender: UIButton) {
+//        print("output rate/ textfield: ", rateOutput)
+        
     }
     
-    @IBAction func uploadImage(_ sender: UIButton) {
-    }
+//    @IBAction func pushImageAndData(_ sender: UIButton) {
+//    }
+//    
+//    @IBAction func uploadImage(_ sender: UIButton) {
+//         print("output rate/ textfield: ", rateOutput.text!)
+//        print("fuel type is : ", fuelType())
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
