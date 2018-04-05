@@ -10,12 +10,43 @@ import UIKit
 import TesseractOCR
 
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate , G8TesseractDelegate{
+class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate ,UIPickerViewDataSource, G8TesseractDelegate{
+    
+
+    let pickerData = ["6TH AVE LETHBRDIGE","ATHABASCA","BANFF", "CAMROSE","COLD LAKE ESSO","CROSSFIELD","INNISFREE","MAYOR LETHBRIDGE","NEEPAWA ESSO","PEACE RIVER","SAINT PAUL","SWIFT CURRENT","SYLVAN LAKE","VALLEY VIEW","VIKING","VIRDEN","WANDERING RIVER","WHITE HORSE","WINTERBURN" ]
+    let competitorsList = [ "ESSO","FAS GAS","SHELL","HUSKY","CO-OP","SEVEN - 11","CIRCLE K","GAS KING","NO FRILLS","WHOLESALE","CANADIAN TIRES","TEMPO","TAGS","SUPERSTORE"]
+
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (pickerView == siteName){
+            return pickerData.count}
+        
+        else{
+            return competitorsList.count}
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView == siteName){
+            return pickerData[row]}
+        else{
+            return competitorsList[row]
+        }
+    }
+    
 
 //    @IBOutlet weak var rateOutput: UILabel!
+    @IBOutlet weak var siteName: UIPickerView!
+    @IBOutlet weak var competitors: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var rateOutput: UITextField!
     @IBOutlet weak var fuel: UISegmentedControl!
+    
+//    var pickerData: [String] = [String]()
     
     func fuelType() -> String{
         switch fuel.selectedSegmentIndex
@@ -73,7 +104,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func pushImage(_ sender: UIButton) {
-//        print("output rate/ textfield: ", rateOutput)
+        print("output rate/ textfield: ", rateOutput)
         
     }
     
@@ -88,7 +119,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // construct here
+        
+        siteName.delegate = self
+        siteName.dataSource = self
+        competitors.delegate = self
+        competitors.dataSource = self
+        
     }
 
     func recognizeImage(requiredImage:UIImage){
@@ -109,6 +145,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     func shouldCancelImageRecognitionForTesseract(tesseract: G8Tesseract!) -> Bool {
         return false // return true if you need to interrupt tesseract before it finishes
