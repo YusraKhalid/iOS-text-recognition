@@ -10,7 +10,7 @@ import UIKit
 import TesseractOCR
 
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate ,UIPickerViewDataSource, G8TesseractDelegate{
+class Title: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate ,UIPickerViewDataSource, G8TesseractDelegate{
     
 
     let pickerData = ["6TH AVE LETHBRDIGE","ATHABASCA","BANFF", "CAMROSE","COLD LAKE ESSO","CROSSFIELD","INNISFREE","MAYOR LETHBRIDGE","NEEPAWA ESSO","PEACE RIVER","SAINT PAUL","SWIFT CURRENT","SYLVAN LAKE","VALLEY VIEW","VIKING","VIRDEN","WANDERING RIVER","WHITE HORSE","WINTERBURN" ]
