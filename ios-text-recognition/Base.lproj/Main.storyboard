@@ -62,8 +62,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7I-GK-lsX"/>
-                                    <segue destination="k26-J1-tEx" kind="show" id="Djd-Zu-fjx"/>
+                                    <segue destination="k26-J1-tEx" kind="show" id="pFr-qX-67I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Competitors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-5R-yND">
@@ -104,10 +103,11 @@
                     <navigationItem key="navigationItem" title="Title" id="zUQ-7J-Zf9"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="competitors" destination="eFa-sf-PcD" id="HpI-6W-0oc"/>
                         <outlet property="fuel" destination="qPl-dG-PYQ" id="BRs-aO-QuT"/>
-                        <outlet property="gasStation" destination="eFa-sf-PcD" id="4XQ-wC-75C"/>
                         <outlet property="imageView" destination="Klh-fg-UB6" id="ck6-Go-WZc"/>
                         <outlet property="rateOutput" destination="vdB-fR-vbz" id="s9Q-oK-6de"/>
+                        <outlet property="siteName" destination="hsK-U8-shT" id="vUK-Jx-PGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
